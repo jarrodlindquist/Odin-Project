@@ -1,0 +1,194 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 25px;
+}
+
+h2 {
+    color: darkred;
+    font-size: 28px;
+    margin-bottom: 50px;
+}
+
+p {
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+
+button {
+    max-width: 250px;
+    padding: 10px 25px;
+    border-radius: 10px;
+    border: 2px;
+    border-style: solid;
+}
+
+button:hover {
+    opacity: 50%;
+}
+
+/* Header */
+
+header {
+    background-color: black;
+    color: white;
+    padding: 10px 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 40px;
+    margin-right: 10px;
+    background-color: darkred;
+    padding: 7.5px;
+    border-radius: 10px;
+    outline: 2px;
+    outline-style: solid;
+    outline-color: white;
+}
+
+.logo-area {
+    font-weight: bolder;
+    font-size: 26px;
+    display: flex;
+    align-items: center;
+}
+
+.nav-bar {
+    display: flex;
+    list-style: none;
+}
+
+.nav-item {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0 15px;
+}
+
+.nav-item:hover {
+    color: darkred;
+}
+
+/* Landing */
+.landing {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: darkred;
+}
+
+#landing-image {
+    width: 50%;
+    margin-left: 5%;
+}
+
+#left-content {
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+}
+
+/* Menu */
+.menu {
+    display: flex;
+    flex-direction: column;
+    padding: 100px 50px;
+    text-align: center;
+}
+
+.menu-items {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.food-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 25px;
+    border: 5px;
+    border-color: black;
+    border-style: solid;
+    margin-bottom: 25px;
+}
+
+.food-name {
+    margin-bottom: 10px;
+}
+
+/* Quote */
+.quote {
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    text-align: center;
+    background-color: lightgray;
+}
+
+#quote {
+    font-size: 48px;
+    font-family: cursive;
+    font-style: italic;
+    font-weight: lighter;
+}
+
+#quote-author {
+    font-size: 24px;
+    font-style: italic;
+    font-weight: lighter;
+}
+
+/* CTA */
+.CTA {
+    padding: 50px;
+    background-color: darkred;
+}
+
+.CTA-box {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cta-heading {
+    margin-bottom: 10px;
+}
+
+.cta-text {
+    margin-bottom: 0px;
+}
+
+/* Footer */
+footer {
+    padding: 15px 50px;
+    background-color: black;
+    text-align: center;
+}
+
+#copyright {
+    color: white;
+    margin-bottom: 0;
+}
+
+/* Utilities */
+.highlight {
+    padding-right: 10px;
+    font-size: 48px;
+}
+
+.invert {
+    color: white;
+    background-color: darkred;
+    border-color: white;
+}
