@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let decision = Math.random() * 3;
+        let humanScore = 0;
+        let computerScore = 0;
+
+        function getComputerChoice() {
+            if (decision >= 0 && decision < 1) {
+                return "ROCK";
+            } else if (decision >= 1 && decision < 2) {
+                return "PAPER";
+            } else {
+                return "SCISSORS";
+            }
+        }
+
+        function getHumanChoice() {
+            return prompt("Please enter: ROCK, PAPER or SCISSORS")
+        }
+
+        function playRound(humanChoice, computerChoice) {
+            if (humanChoice == computerChoice) {
+                console.log(`It's a draw! You both selected ${humanChoice}`);
+            } else if (humanChoice == "ROCK") {
+                if (computerChoice == "SCISSORS") {
+                    humanScore += 1;
+                    console.log("You win!")
+                } else {
+                    computerScore += 1;
+                    console.log("You lose!")
+                }
+            } else if (humanChoice == "PAPER") {
+                if (computerChoice == "ROCK") {
+                    humanScore += 1;
+                    console.log("You win!")
+                } else {
+                    computerScore += 1;
+                    console.log("You lose!")
+                }
+            } else if (humanChoice == "SCISSORS") {
+                if (computerChoice == "PAPER") {
+                    humanScore += 1;
+                    console.log("You win!")
+                } else {
+                    computerScore += 1;
+                    console.log("You lose!")
+                }
+            }
+        }
+
+        function playGame() {
+            let humanSelection = 0;
+            let computerSelection = 0;
+
+            for (let i = 0; i < 5; i++) {
+                decision = Math.random() * 3;
+                humanSelection = getHumanChoice();
+                computerSelection = getComputerChoice();
+                playRound(humanSelection, computerSelection);
+            }
+
+            if (humanScore > computerScore) {
+                console.log("You win the game, congratulations!");
+            } else {
+                console.log("You lost, please play again!");
+            }
+        }
+
+        playGame();
+    </script>
+</body>
+</html>
