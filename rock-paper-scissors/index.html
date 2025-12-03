@@ -6,20 +6,24 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="scores">
-        <p id="human-score">Human: 0</p>
-        <p id="computer-score">Computer: 0</p>
+    <div class="game">
+        <div class="scores">
+            <p id="human-score">Human: 0</p>
+            <p id="computer-score">Computer: 0</p>
+        </div>
+
+        <div class="buttons">
+            <button class="button" id="rock"><img src="./images/stone_8722137.png"></button>
+            <button class="button" id="paper"><img src="./images/paper_5052649.png"></button>
+            <button class="button" id="scissors"><img src="./images/scissors_8484219.png"></button>
+        </div>
+
+        <div class="result">
+            <p id="result-text"></p>
+        </div>
     </div>
-
-    <button id="rock">Rock</button>
-    <button id="paper">Paper</button>
-    <button id="scissors">Scissors</button>
-
-    <div class="result">
-        <p id="result-text"></p>
-    </div>
-
-    <div style="display: none;" class="game-over">
+    
+    <div class="game-over">
         <h1>Game Over</h1>
         <p id="win-lose"></p>
         <button id="play-again">Play Again</button>
@@ -90,13 +94,13 @@
                     pResult.textContent = "You Lose - Play again?";
                 };
 
-                div.style.display = "block";
+                div.classList.add("show");
 
                 playAgain.addEventListener('click', function() {
                     humanScore = 0;
                     computerScore = 0;
                     p.textContent = "";
-                    div.style.display = "none";
+                    div.classList.remove("show");
                     humanScoreText.textContent = `Human: ${humanScore}`;
                     computerScoreText.textContent = `Computer: ${computerScore}`;
                 })
@@ -121,5 +125,112 @@
             playRound(humanChoice, computerChoice);
         });
     </script>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .game {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            background-color: cornflowerblue;
+        }
+
+        .scores {
+            color: white;
+            font-size: 36px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 10%;
+        }
+
+        .buttons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 50px;
+            height: 100%;
+            gap: 10%;
+        }
+
+        #rock, #paper, #scissors {
+            all: unset;
+            padding: 25px;
+            width: 200px;
+            height: 200px;
+            border: 5px;
+            border-color: white;
+            border-style: solid;
+            border-radius: 25px;
+            background-color: rgb(172, 193, 233);
+        }
+
+        #rock:hover, #paper:hover, #scissors:hover {
+            opacity: 75%;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        .result {
+            height: 50%;
+            text-align: center;
+            font-size: 36px;
+            color: white;
+        }
+
+        .game-over {
+            position: fixed;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            background-color: cornflowerblue;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+
+            /* Start hidden */
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+        }
+
+        .game-over.show {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        h1 {
+            font-size: 60px;
+        }
+
+        #play-again {
+            all: unset;
+            width: 200px;
+            padding: 20px;
+            border-radius: 25px;
+            font-size: 24px;
+            color: cornflowerblue;
+            background-color: white;
+        }
+
+        #win-lose {
+            height: 100px;
+            font-size: 24px;
+        }
+    </style>
 </body>
 </html>
